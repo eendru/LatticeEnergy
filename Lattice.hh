@@ -15,37 +15,37 @@ typedef struct point_s {
 class Lattice {
   public:
   /*!
-   * Конструктор решетки.
-   * @param[in] N Количество точек решетки.
-   * @param[in] L Граница по осям координат.
-   * @param[in] sigma Толщина кольца.
-   * @param[in] r Радиус кольца.
+   * @param[in] N Number of points
+   * @param[in] L Border on XY axis
+   * @param[in] sigma Depth of circle
+   * @param[in] r Radius of circle
    */
     Lattice(uint64_t N = 1000, double L = 20.0, double sigma = 0.05, double r = 1);
+
   /*!
-   * Генерирует N точек в интервале (0, L).
-   * Будет заполнен вектор std::vector<double>_points.
+   * Generate N points in interval (0, L) x (0, L).
+   * std::vector<double>_points will be filled.
    */
     void GeneratePoints();
 
   /*!
-   * Находит соседей(номера) для каждой точки из вектора std::vector<double> _points.
+   * Find number of neighbors for each item in std::vector<double> _points.
    */
     void BuildNeighbors();
 
   /*!
-   * Генерирует случайное double число в интервале от min до max.
+   * Generate random double number in interval (min, max)
    */
     static double RandomNumberInRange(double min, double max);
 
   /*!
-   * Проверяет, являются ли две точки соседями.
+   * Check, if two points are neighbors
    * (distance > _r - _sigma/2) && (distance < _r + _sigma/2)
    */
     bool IsNeighbor(point_t &p1, point_t &p2);
 
   /*!
-   * Вычисляет расстояние между двумя точками(евклидово).
+   * Calculate euclid distance between two points
    */
     double Distance(const point_t &p1, const point_t &p2);
 
