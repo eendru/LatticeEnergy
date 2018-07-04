@@ -1,0 +1,10 @@
+parameters:
+ N: 100000     # uint64_t, Number of points
+ L: 20.0       # double, X-Y border
+ r: 1.0        # double, Circle radius
+ sigma: 0.05   # double, Circle depth
+
+# histogram output filename prefix
+ histogram_filename_prefix: "histogram"
+# postfix without '.'
+ histogram_filename_postfix: "dat"
