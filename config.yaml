@@ -3,6 +3,8 @@ parameters:
  L: 20.0       # double, X-Y border
  r: 1.0        # double, Circle radius
  sigma: 0.05   # double, Circle depth
+ q: 3          # uint16_t, Number of colors
+ energy: 0.0   # double, Start energy
 
 # histogram output filename prefix
  histogram_filename_prefix: "histogram"

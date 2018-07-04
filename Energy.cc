@@ -23,13 +23,16 @@ int main(int argc, char **argv)
     double L = config["parameters"]["L"].as<double>();
     double r = config["parameters"]["r"].as<double>();
     double sigma = config["parameters"]["sigma"].as<double>();
+    uint16_t q = config["parameters"]["q"].as<uint16_t>();
+    uint16_t energy = config["parameters"]["energy"].as<double>();
 
     std::string prefix = config["parameters"]["histogram_filename_prefix"].as<std::string>();
     std::string postfix = config["parameters"]["histogram_filename_postfix"].as<std::string>();
 
-    Lattice lattice(N, L, r, sigma);
+    Lattice lattice(N, L, r, sigma, q, energy);
     lattice.GeneratePoints();
     lattice.BuildNeighbors();
+    lattice.CalculateEnergy();
 
     Histogram h(lattice);
     h.Build(prefix, postfix);

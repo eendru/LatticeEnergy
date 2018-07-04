@@ -33,7 +33,8 @@ std::string Histogram::Filename(std::string &prefix, std::string &postfix)
     std::string data_string = "_N_" + std::to_string(_l.N()) +
                               "_L_" + std::to_string(_l.L()) +
                               "_sigma_" + std::to_string(_l.Sigma()) +
-                              "_r_" + std::to_string(_l.R());
+                              "_r_" + std::to_string(_l.R()) +
+                              "_energy_" + std::to_string(_l.Energy());
 
     return prefix + "_" + Timestamp() + data_string + "." + postfix;
 }
