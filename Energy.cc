@@ -1,9 +1,10 @@
 #include "Lattice.hh"
-#include "yaml-cpp/yaml.h"
+#include "Histogram.hh"
+
 #include <iostream>
 #include <string>
-#include <limits.h>
-#include <stdlib.h>
+
+#include "yaml-cpp/yaml.h"
 
 int main(int argc, char **argv)
 {
@@ -29,7 +30,9 @@ int main(int argc, char **argv)
     Lattice lattice(N, L, r, sigma);
     lattice.GeneratePoints();
     lattice.BuildNeighbors();
-    lattice.Histogram(prefix, postfix);
+
+    Histogram h(lattice);
+    h.Build(prefix, postfix);
 
     return 0;
 }

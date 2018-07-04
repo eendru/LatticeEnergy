@@ -49,18 +49,15 @@ class Lattice {
    */
     double Distance(const point_t &p1, const point_t &p2);
 
-  /*!
-   * См. пример:
-   * https://www.gnu.org/software/gsl/manual/html_node/Example-programs-for-histograms.html
-   * Строит гистограмму числа соседей используя GNU Scientific Library.
-   *
-   * Посмотреть полученную гистограмму можно так:
-   * awk '{print $1, $3 ; print $2, $3}' histogram.dat | graph -T X
-   */
-    void Histogram(std::string &prefix, std::string &postfix);
+  public:
 
-  private:
-    std::string BuildHistogramFilename(std::string &prefix, std::string &postfix);
+    uint64_t N() const {return _N;}
+    double R() const  {return _r;}
+    double Sigma() const {return _sigma;}
+    double L() const {return _L;}
+
+    size_t PointsSize() const { return _points.size();}
+    size_t NeighborsSize(size_t index) const {return _points[index]._neighbors.size();}
 
   private:
     double _sigma;

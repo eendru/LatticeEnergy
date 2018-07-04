@@ -13,6 +13,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(LatticeEnergy
                     Lattice.cc
+                    Histogram.cc
                     Energy.cc)
 
 target_link_libraries(LatticeEnergy GSL::gsl GSL::gslcblas yaml-cpp)
