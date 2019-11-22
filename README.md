@@ -1,5 +1,5 @@
 # LatticeEnergy
-We are going to generate Lattice and calculate Lattice Energy.
+See Task Lattice Energy pdf
 
 
 * libyaml-cpp - for parse YAML configuration file.
