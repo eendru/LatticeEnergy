@@ -1,5 +1,5 @@
 # LatticeEnergy
-See `Task Lattice Energy pdf`
+See `Task_Lattice_Energy.pdf`
 
 
 * libyaml-cpp - for parse YAML configuration file.
